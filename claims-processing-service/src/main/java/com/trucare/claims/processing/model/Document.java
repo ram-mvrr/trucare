@@ -17,16 +17,14 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "claim_id", nullable = false)
-    private Long claimId;
+    @ManyToOne
+    @JoinColumn(name = "claim_id", nullable = false)
+    private Long claim;
 
     @Column(name = "file_path", nullable = false)
     private String filePath;
 
     @Column(name = "document_type")
     private String documentType;
-
-    // Getters and Setters
-    // ...
 }
 

@@ -6,8 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
 
 @Entity
 @Table(name = "claims")
@@ -36,5 +37,10 @@ public class Claim {
     @Temporal(TemporalType.DATE)
     private Date dateOfService;
 
+    @OneToMany(mappedBy = "claim", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ClaimStatus> claimStatuses = new ArrayList<>();
+
+    @OneToMany(mappedBy = "claim", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Document> documents = new ArrayList<>();
 
 }

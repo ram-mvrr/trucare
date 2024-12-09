@@ -6,7 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,6 +33,9 @@ public class Member {
 
     @Column(name = "insurance_policy_number", unique = true, nullable = false)
     private String insurancePolicyNumber;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Claim> claims = new ArrayList<>();
 }
 
 

@@ -19,8 +19,9 @@ public class ClaimStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "claim_id", nullable = false)
-    private Long claimId;
+    @ManyToOne
+    @JoinColumn(name = "claim_id", nullable = false)
+    private Claim claim;
 
     @Column(name = "status", nullable = false)
     private String status;
@@ -28,6 +29,4 @@ public class ClaimStatus {
     @Column(name = "updated_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
-
-
 }
