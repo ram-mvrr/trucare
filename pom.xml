@@ -10,15 +10,17 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.example.trucare</groupId>
-    <artifactId>trucare</artifactId>
+    <groupId>com.trucare</groupId>
+    <artifactId>trucare-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>claims-processing-service</module>
-<!--        <module>member-management-service</module>-->
-<!--        <module>document-management-service</module>-->
+        <module>member-service</module>
+        <module>document-service</module>
+        <module>care-service</module>
+        <module>provider-service</module>
 <!--        <module>notifications-service</module>-->
         <!-- Add other microservices as needed -->
     </modules>

@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.trucare.claims</groupId>
-	<artifactId>claims-processing-service</artifactId>
+	<artifactId>member-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Claims Processing Service</name>
+	<name>Member Service</name>
 	<description>Service for processing claims in TruCare application</description>
 	<url>http://www.example.com</url> <!-- Add your project's URL -->
 
@@ -52,24 +52,6 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>1.6.2</version>
@@ -82,9 +64,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
-			<scope>test</scope>
+			<groupId>com.trucare</groupId>
+			<artifactId>shared-library</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
