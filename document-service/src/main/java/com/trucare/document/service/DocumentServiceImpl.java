@@ -3,7 +3,7 @@ package com.trucare.document.service;
 import com.trucare.document.mapper.DocumentMapper;
 import com.trucare.document.model.Document;
 import com.trucare.document.repository.DocumentRepository;
-import com.trucare.document.shared.document.DocumentDTO;
+import com.trucare.shared.document.DocumentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

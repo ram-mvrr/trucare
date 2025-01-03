@@ -3,7 +3,7 @@ package com.trucare.provider.service;
 import com.trucare.provider.mapper.ProviderMapper;
 import com.trucare.provider.model.Provider;
 import com.trucare.provider.repository.ProviderRepository;
-import com.trucare.document.shared.provider.ProviderDTO;
+import com.trucare.shared.provider.ProviderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,12 @@ public class ProviderServiceImpl implements ProviderService {
         Provider provider = providerMapper.providerDTOToProvider(providerDTO);
         provider = providerRepository.save(provider);
         return providerMapper.providerToProviderDTO(provider);
+    }
+
+    @Override
+    public boolean validateProvider(String providerId) {
+        System.out.println("Validating provider: " + providerId);  // Simulating API call
+        return providerId!=null && !providerId.isEmpty();
     }
 
     @Override

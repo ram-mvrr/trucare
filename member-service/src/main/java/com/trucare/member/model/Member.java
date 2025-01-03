@@ -24,7 +24,7 @@ public class Member {
     private Long id;  // Primary key is String as per the requirement
 
     @Column(unique = true)
-    private String username;
+    private String memberId;
 
     @NotNull
     private String firstName; // Member's first name

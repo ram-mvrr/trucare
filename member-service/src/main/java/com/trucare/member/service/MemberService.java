@@ -1,6 +1,6 @@
 package com.trucare.member.service;
 
-import com.trucare.document.shared.member.MemberDTO;
+import com.trucare.shared.member.MemberDTO;
 import java.util.List;
 
 public interface MemberService {
@@ -8,11 +8,14 @@ public interface MemberService {
     // Create Member
     MemberDTO createMember(MemberDTO memberDTO);
 
+    // Validate Member
+    boolean validateMember(String memberId);
+
     // Get Member by ID
     MemberDTO getMemberById(Long id);
 
     // Get Member by Username
-    MemberDTO getMemberByUsername(String username);
+    MemberDTO getMemberByUsername(String memberId);
 
     // Get all Members
     List<MemberDTO> getAllMembers();

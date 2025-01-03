@@ -21,8 +21,8 @@ spring:
           filters:
             - RewritePath=/care-plans/(?<segment>.*), /api/care-plans/${segment}
 
-        - id: claims-processing-service
-          uri: lb://claims-processing-service
+        - id: claims-service
+          uri: lb://claims-service
           predicates:
             - Path=/claims/**
           filters:

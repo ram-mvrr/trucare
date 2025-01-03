@@ -8,18 +8,49 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="claims-processing-service" />
-        <module name="JavaPrograms" />
-        <module name="bus" />
-        <module name="expense" />
-        <module name="user" />
+        <module name="api-gateway" />
+        <module name="member-service" />
+        <module name="provider-service" />
+        <module name="eureka-server" />
+        <module name="care-service" />
+        <module name="document-service" />
+      </profile>
+      <profile name="Annotation profile for shared-library" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="shared-library" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="booking" target="17" />
+      <module name="bus" target="17" />
+      <module name="expense" target="17" />
+      <module name="JavaPrograms" target="11" />
+      <module name="route" target="17" />
+      <module name="seat" target="17" />
+      <module name="ticketbooking" target="1.5" />
+      <module name="user" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="booking" options="-parameters" />
       <module name="bus" options="-parameters" />
+      <module name="care-service" options="-parameters" />
       <module name="claims-processing-service" options="-parameters" />
+      <module name="document-service" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="expense" options="-parameters" />
+      <module name="member-service" options="-parameters" />
+      <module name="provider-service" options="-parameters" />
+      <module name="route" options="-parameters" />
+      <module name="seat" options="-parameters" />
+      <module name="shared-library" options="-parameters" />
       <module name="ticketbooking" options="" />
       <module name="user" options="-parameters" />
     </option>

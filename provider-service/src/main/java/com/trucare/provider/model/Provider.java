@@ -18,6 +18,9 @@ public class Provider {
     private Long id;  // Primary key
 
     @NotNull
+    private String providerId;
+
+    @NotNull
     private String name;  // Provider's name
 
     private String specialization;  // Provider's specialty

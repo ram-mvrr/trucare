@@ -4,8 +4,7 @@ package com.trucare.care.service;
 import com.trucare.care.mapper.CareMapper;
 import com.trucare.care.model.Care;
 import com.trucare.care.repository.CareRepository;
-import com.trucare.care.service.CareService;
-import com.trucare.document.shared.care.CareDTO;
+import com.trucare.shared.care.CareDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

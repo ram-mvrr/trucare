@@ -1,7 +1,7 @@
 package com.trucare.document.controller;
 
 import com.trucare.document.service.DocumentService;
-import com.trucare.document.shared.document.DocumentDTO;
+import com.trucare.shared.document.DocumentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

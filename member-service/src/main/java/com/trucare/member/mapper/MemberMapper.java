@@ -2,7 +2,7 @@ package com.trucare.member.mapper;
 
 
 import com.trucare.member.model.Member;
-import com.trucare.document.shared.member.MemberDTO;
+import com.trucare.shared.member.MemberDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

@@ -5,11 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../JavaPrograms/pom.xml" />
-        <option value="$PROJECT_DIR$/../expense/pom.xml" />
-        <option value="$PROJECT_DIR$/../ticket-booking-system/pom.xml" />
         <option value="$PROJECT_DIR$/../ticket-booking-system/src/main/java/com/example/ticketbooking/user/pom.xml" />
-        <option value="$PROJECT_DIR$/../ticket-booking-system/bus/pom.xml" />
+        <option value="$PROJECT_DIR$/shared-library/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
       </list>
     </option>
   </component>

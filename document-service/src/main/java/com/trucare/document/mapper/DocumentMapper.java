@@ -1,6 +1,6 @@
 package com.trucare.document.mapper;
 
-import com.trucare.document.shared.document.DocumentDTO;
+import com.trucare.shared.document.DocumentDTO;
 import com.trucare.document.model.Document;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

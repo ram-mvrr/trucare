@@ -1,7 +1,7 @@
 package com.trucare.member.controller;
 
 import com.trucare.member.service.MemberService;
-import com.trucare.document.shared.member.MemberDTO;
+import com.trucare.shared.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

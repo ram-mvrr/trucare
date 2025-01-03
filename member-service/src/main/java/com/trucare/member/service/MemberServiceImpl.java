@@ -4,8 +4,9 @@ package com.trucare.member.service;
 import com.trucare.member.mapper.MemberMapper;
 import com.trucare.member.model.Member;
 import com.trucare.member.repository.MemberRepository;
-import com.trucare.document.shared.member.MemberDTO;
+import com.trucare.shared.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,12 +27,19 @@ public class MemberServiceImpl implements MemberService {
     // Create Member
     @Transactional
     public MemberDTO createMember(MemberDTO memberDTO) {
-        if (memberRepository.existsByUsername(memberDTO.getUsername())) {
+        if (memberRepository.existsByUsername(memberDTO.getMemberId())) {
             throw new RuntimeException("Username already exists.");
         }
         Member member = memberMapper.memberDtoToMember(memberDTO);
         member = memberRepository.save(member);
         return memberMapper.memberToMemberDto(member);
+    }
+
+    @Override
+    @Cacheable(value = "members", key = "#memberId")
+    public boolean validateMember(String memberId) {
+        System.out.println("Validating member: " + memberId);
+        return memberId !=null && !memberId.isEmpty();
     }
 
     // Get Member by ID
@@ -67,7 +75,7 @@ public class MemberServiceImpl implements MemberService {
         member.setGender(memberDTO.getGender());
         member.setContactNumber(memberDTO.getContactNumber());
         member.setAddress(memberDTO.getAddress());
-        member.setUsername(memberDTO.getUsername());
+        member.setMemberId(memberDTO.getMemberId());
         member.setDocumentIds(memberDTO.getDocumentIds());
 
         member = memberRepository.save(member);

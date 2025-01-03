@@ -1,7 +1,7 @@
 package com.trucare.care.controller;
 
 import com.trucare.care.service.CareService;
-import com.trucare.document.shared.care.CareDTO;
+import com.trucare.shared.care.CareDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

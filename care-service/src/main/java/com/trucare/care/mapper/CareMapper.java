@@ -1,7 +1,7 @@
 package com.trucare.care.mapper;
 
 import com.trucare.care.model.Care;
-import com.trucare.document.shared.care.CareDTO;
+import com.trucare.shared.care.CareDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

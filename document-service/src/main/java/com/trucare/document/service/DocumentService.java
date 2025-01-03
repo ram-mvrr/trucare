@@ -1,7 +1,7 @@
 package com.trucare.document.service;
 
 
-import com.trucare.document.shared.document.DocumentDTO;
+import com.trucare.shared.document.DocumentDTO;
 
 import java.util.List;
 

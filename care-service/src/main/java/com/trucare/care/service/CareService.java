@@ -2,7 +2,7 @@ package com.trucare.care.service;
 
 
 
-import com.trucare.document.shared.care.CareDTO;
+import com.trucare.shared.care.CareDTO;
 
 import java.util.List;
 

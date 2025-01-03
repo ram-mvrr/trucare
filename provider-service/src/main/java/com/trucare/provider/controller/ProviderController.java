@@ -1,7 +1,7 @@
 package com.trucare.provider.controller;
 
 import com.trucare.provider.service.ProviderService;
-import com.trucare.document.shared.provider.ProviderDTO;
+import com.trucare.shared.provider.ProviderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
