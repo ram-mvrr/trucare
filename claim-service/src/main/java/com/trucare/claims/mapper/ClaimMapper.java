@@ -14,12 +14,8 @@ import java.util.List;
 @Mapper
 public interface ClaimMapper {
 
-    @Mapping(source = "Claim.claimStatuses", target = "claimStatuses")
-    @Mapping(source = "Claim.documents", target = "documents")
     ClaimDTO toClaimDTO(Claim claim);
 
-    @Mapping(source = "claimStatuses", target = "claimStatuses")
-    @Mapping(source = "documents", target = "documents")
     Claim toClaim(ClaimDTO claimDTO);
 
     Claim toClaim(CreateClaimDTO createClaimDTO);

@@ -1,6 +1,5 @@
-package com.trucare.provider.client;
+package com.trucare.shared.client;
 
-import jakarta.validation.constraints.Pattern;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,5 +8,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ProviderClient {
 
     @GetMapping("/validate/{providerId}")
-    Boolean validateProvider(@PathVariable("providerId") String providerid);
+    Boolean validateProvider(@PathVariable("providerId") String providerId);
 }

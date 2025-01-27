@@ -29,7 +29,7 @@ public class Claim {
 
     private BigDecimal claimAmount;  // Claim amount
 
-    private String claimStatuses;  // CLAIMED, APPROVED, REJECTED
+    private String claimStatus;  // CLAIMED, APPROVED, REJECTED
 
     private LocalDateTime createdAt;  // Claim creation date
 

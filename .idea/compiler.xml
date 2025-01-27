@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="claim-service" />
         <module name="claims-processing-service" />
         <module name="api-gateway" />
         <module name="member-service" />
-        <module name="provider-service" />
         <module name="eureka-server" />
+        <module name="provider-service" />
+        <module name="interview" />
         <module name="care-service" />
         <module name="document-service" />
       </profile>
@@ -33,6 +35,7 @@
       <module name="route" target="17" />
       <module name="seat" target="17" />
       <module name="ticketbooking" target="1.5" />
+      <module name="trucare" target="1.5" />
       <module name="user" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -42,6 +45,7 @@
       <module name="booking" options="-parameters" />
       <module name="bus" options="-parameters" />
       <module name="care-service" options="-parameters" />
+      <module name="claim-service" options="-parameters" />
       <module name="claims-processing-service" options="-parameters" />
       <module name="document-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
@@ -52,6 +56,7 @@
       <module name="seat" options="-parameters" />
       <module name="shared-library" options="-parameters" />
       <module name="ticketbooking" options="" />
+      <module name="trucare-parent" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>

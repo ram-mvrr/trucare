@@ -1,8 +1,0 @@
-com\trucare\shared\provider\ProviderDTO.class
-com\trucare\shared\claim\ClaimDTO.class
-com\trucare\shared\claim\CreateClaimDTO.class
-com\trucare\shared\claim\UpdateClaimDTO.class
-com\trucare\shared\care\CareDTO.class
-com\trucare\shared\kafka\kafkaProperties.class
-com\trucare\shared\document\DocumentDTO.class
-com\trucare\shared\member\MemberDTO.class

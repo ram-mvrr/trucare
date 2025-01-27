@@ -1,10 +1,10 @@
-package com.trucare.claims;
+package com.trucare.document;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClaimsProcessingServiceApplicationTests {
+class DocumentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

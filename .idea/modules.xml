@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/claims-processing-service/claims-processing-service.iml" filepath="$PROJECT_DIR$/claims-processing-service/claims-processing-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trucare-parent.iml" filepath="$PROJECT_DIR$/trucare-parent.iml" />
+    </modules>
+  </component>
+</project>
