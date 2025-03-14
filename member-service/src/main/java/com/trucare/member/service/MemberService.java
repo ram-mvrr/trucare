@@ -1,8 +1,11 @@
 package com.trucare.member.service;
 
 import com.trucare.shared.member.MemberDTO;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public interface MemberService {
 
     // Create Member

@@ -11,7 +11,7 @@ public interface MemberMapper {
 
     MemberMapper INSTANCE = Mappers.getMapper(MemberMapper.class);
 
-    Member memberDtoToMember(MemberDTO memberDTO);
+    Member toDO(MemberDTO memberDTO);
 
-    MemberDTO memberToMemberDto(Member member);
+    MemberDTO toDTO(Member member);
 }

@@ -31,12 +31,12 @@ public class KafkaConfig {
     }
 
     @Bean
-    public ProducerFactory<String, Claim> producerFactory(){
+    public ProducerFactory<String, Object> producerFactory(){
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
-    public KafkaTemplate<String, Claim> kafkaTemplate(){
+    public KafkaTemplate<String, Object> kafkaTemplate(){
         return new KafkaTemplate<>(producerFactory());
     }
 

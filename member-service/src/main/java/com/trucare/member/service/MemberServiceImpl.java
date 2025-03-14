@@ -5,7 +5,6 @@ import com.trucare.member.mapper.MemberMapper;
 import com.trucare.member.model.Member;
 import com.trucare.member.repository.MemberRepository;
 import com.trucare.shared.member.MemberDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +17,6 @@ public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
     private final MemberMapper memberMapper;
 
-    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository, MemberMapper memberMapper) {
         this.memberRepository = memberRepository;
         this.memberMapper = memberMapper;
@@ -27,12 +25,12 @@ public class MemberServiceImpl implements MemberService {
     // Create Member
     @Transactional
     public MemberDTO createMember(MemberDTO memberDTO) {
-        if (memberRepository.existsByUsername(memberDTO.getMemberId())) {
+        if (memberRepository.existsByUsername(memberDTO.getUsername())) {
             throw new RuntimeException("Username already exists.");
         }
-        Member member = memberMapper.memberDtoToMember(memberDTO);
+        Member member = memberMapper.toDO(memberDTO);
         member = memberRepository.save(member);
-        return memberMapper.memberToMemberDto(member);
+        return memberMapper.toDTO(member);
     }
 
     @Override
@@ -46,21 +44,21 @@ public class MemberServiceImpl implements MemberService {
     public MemberDTO getMemberById(Long id) {
         Member member = memberRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Member not found with id " + id));
-        return memberMapper.memberToMemberDto(member);
+        return memberMapper.toDTO(member);
     }
 
     // Get Member by Username
     public MemberDTO getMemberByUsername(String username) {
         Member member = memberRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Member not found with username " + username));
-        return memberMapper.memberToMemberDto(member);
+        return memberMapper.toDTO(member);
     }
 
     // Get all Members
     public List<MemberDTO> getAllMembers() {
         List<Member> members = memberRepository.findAll();
         return members.stream()
-                .map(memberMapper::memberToMemberDto)
+                .map(memberMapper::toDTO)
                 .toList();
     }
 
@@ -75,11 +73,11 @@ public class MemberServiceImpl implements MemberService {
         member.setGender(memberDTO.getGender());
         member.setContactNumber(memberDTO.getContactNumber());
         member.setAddress(memberDTO.getAddress());
-        member.setMemberId(memberDTO.getMemberId());
+        member.setUsername(memberDTO.getUsername());
         member.setDocumentIds(memberDTO.getDocumentIds());
 
         member = memberRepository.save(member);
-        return memberMapper.memberToMemberDto(member);
+        return memberMapper.toDTO(member);
     }
 
     // Delete Member

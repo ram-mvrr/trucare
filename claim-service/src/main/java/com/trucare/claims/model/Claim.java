@@ -11,9 +11,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "claims")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Claim {
 
     @Id
