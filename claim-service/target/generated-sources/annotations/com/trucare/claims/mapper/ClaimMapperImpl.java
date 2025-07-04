@@ -4,12 +4,14 @@ import com.trucare.claims.model.Claim;
 import com.trucare.shared.claim.ClaimDTO;
 import com.trucare.shared.claim.CreateClaimDTO;
 import com.trucare.shared.claim.UpdateClaimDTO;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-03-12T15:13:33+0530",
+    date = "2025-07-02T06:42:58+0530",
     comments = "version: 1.6.2, compiler: javac, environment: Java 17.0.10 (Oracle Corporation)"
 )
 @Component
@@ -23,16 +25,10 @@ public class ClaimMapperImpl implements ClaimMapper {
 
         ClaimDTO claimDTO = new ClaimDTO();
 
+        claimDTO.setId( claim.getId() );
         claimDTO.setClaimId( claim.getClaimId() );
-        if ( claim.getClaimNumber() != null ) {
-            claimDTO.setClaimNumber( Long.parseLong( claim.getClaimNumber() ) );
-        }
-        if ( claim.getMemberId() != null ) {
-            claimDTO.setMemberId( Long.parseLong( claim.getMemberId() ) );
-        }
-        if ( claim.getProviderId() != null ) {
-            claimDTO.setProviderId( Long.parseLong( claim.getProviderId() ) );
-        }
+        claimDTO.setMemberId( claim.getMemberId() );
+        claimDTO.setProviderId( claim.getProviderId() );
         claimDTO.setClaimAmount( claim.getClaimAmount() );
         claimDTO.setCreatedAt( claim.getCreatedAt() );
         claimDTO.setUpdatedAt( claim.getUpdatedAt() );
@@ -48,16 +44,10 @@ public class ClaimMapperImpl implements ClaimMapper {
 
         Claim claim = new Claim();
 
+        claim.setId( claimDTO.getId() );
         claim.setClaimId( claimDTO.getClaimId() );
-        if ( claimDTO.getClaimNumber() != null ) {
-            claim.setClaimNumber( String.valueOf( claimDTO.getClaimNumber() ) );
-        }
-        if ( claimDTO.getMemberId() != null ) {
-            claim.setMemberId( String.valueOf( claimDTO.getMemberId() ) );
-        }
-        if ( claimDTO.getProviderId() != null ) {
-            claim.setProviderId( String.valueOf( claimDTO.getProviderId() ) );
-        }
+        claim.setMemberId( claimDTO.getMemberId() );
+        claim.setProviderId( claimDTO.getProviderId() );
         claim.setClaimAmount( claimDTO.getClaimAmount() );
         claim.setCreatedAt( claimDTO.getCreatedAt() );
         claim.setUpdatedAt( claimDTO.getUpdatedAt() );
@@ -73,14 +63,16 @@ public class ClaimMapperImpl implements ClaimMapper {
 
         Claim claim = new Claim();
 
-        if ( createClaimDTO.getClaimNumber() != null ) {
-            claim.setClaimNumber( String.valueOf( createClaimDTO.getClaimNumber() ) );
-        }
+        claim.setClaimId( createClaimDTO.getClaimId() );
         claim.setMemberId( createClaimDTO.getMemberId() );
         claim.setProviderId( createClaimDTO.getProviderId() );
         claim.setClaimAmount( createClaimDTO.getClaimAmount() );
         claim.setCreatedAt( createClaimDTO.getCreatedAt() );
         claim.setUpdatedAt( createClaimDTO.getUpdatedAt() );
+        List<Long> list = createClaimDTO.getDocumentIds();
+        if ( list != null ) {
+            claim.setDocumentIds( new ArrayList<Long>( list ) );
+        }
 
         return claim;
     }
@@ -93,16 +85,10 @@ public class ClaimMapperImpl implements ClaimMapper {
 
         Claim claim = new Claim();
 
+        claim.setId( updateClaimDTO.getId() );
         claim.setClaimId( updateClaimDTO.getClaimId() );
-        if ( updateClaimDTO.getClaimNumber() != null ) {
-            claim.setClaimNumber( String.valueOf( updateClaimDTO.getClaimNumber() ) );
-        }
-        if ( updateClaimDTO.getMemberId() != null ) {
-            claim.setMemberId( String.valueOf( updateClaimDTO.getMemberId() ) );
-        }
-        if ( updateClaimDTO.getProviderId() != null ) {
-            claim.setProviderId( String.valueOf( updateClaimDTO.getProviderId() ) );
-        }
+        claim.setMemberId( updateClaimDTO.getMemberId() );
+        claim.setProviderId( updateClaimDTO.getProviderId() );
         claim.setClaimAmount( updateClaimDTO.getClaimAmount() );
         claim.setCreatedAt( updateClaimDTO.getCreatedAt() );
         claim.setUpdatedAt( updateClaimDTO.getUpdatedAt() );

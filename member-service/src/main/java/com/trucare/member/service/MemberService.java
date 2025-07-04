@@ -18,7 +18,7 @@ public interface MemberService {
     MemberDTO getMemberById(Long id);
 
     // Get Member by Username
-    MemberDTO getMemberByUsername(String memberId);
+    MemberDTO getMemberByMemberId(String memberId);
 
     // Get all Members
     List<MemberDTO> getAllMembers();

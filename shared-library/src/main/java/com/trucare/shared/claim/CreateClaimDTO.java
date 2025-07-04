@@ -14,12 +14,12 @@ import java.util.List;
 @Data
 public class CreateClaimDTO {
 
-    private Long claimNumber;
+    private String claimId;
     private String memberId; // Can be expanded to MemberDTO if needed
     private String providerId; // Can be expanded to ProviderDTO if needed
     private BigDecimal claimAmount;
     private String claimStatuses; // Relationship to ClaimStatusDTO
     private LocalDateTime createdAt;  // Claim creation date
     private LocalDateTime updatedAt;
-    private List<DocumentDTO> documents;
+    private List<Long> documentIds;
 }

@@ -18,11 +18,13 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // Primary key
 
-    private Long claimId;  // Associated claim ID
-
     private String documentName;  // Name of the document
 
-    private String documentUrl;  // S3 bucket URL or path
+    private String documentPath;
+
+    private String documentType; // e.g., BILL, PRESCRIPTION, etc.
+
+    private String memberId;
 
     private LocalDateTime uploadedAt;  // Upload timestamp
 }

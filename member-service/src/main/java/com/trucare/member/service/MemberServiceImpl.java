@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -25,10 +27,13 @@ public class MemberServiceImpl implements MemberService {
     // Create Member
     @Transactional
     public MemberDTO createMember(MemberDTO memberDTO) {
+
+        String memberId = "M"+ UUID.randomUUID().toString().substring(0,6).toUpperCase();
         if (memberRepository.existsByUsername(memberDTO.getUsername())) {
             throw new RuntimeException("Username already exists.");
         }
         Member member = memberMapper.toDO(memberDTO);
+        member.setMemberId(memberId);
         member = memberRepository.save(member);
         return memberMapper.toDTO(member);
     }
@@ -37,7 +42,8 @@ public class MemberServiceImpl implements MemberService {
     @Cacheable(value = "members", key = "#memberId")
     public boolean validateMember(String memberId) {
         System.out.println("Validating member: " + memberId);
-        return memberId !=null && !memberId.isEmpty();
+        Optional<Member> member = memberRepository.findByMemberId(memberId);
+        return memberId !=null && member.isPresent();
     }
 
     // Get Member by ID
@@ -46,6 +52,15 @@ public class MemberServiceImpl implements MemberService {
                 .orElseThrow(() -> new RuntimeException("Member not found with id " + id));
         return memberMapper.toDTO(member);
     }
+
+    @Override
+    public MemberDTO getMemberByMemberId(String memberId) {
+        Member member = memberRepository.findByMemberId(memberId)
+                .orElseThrow(() -> new RuntimeException("Member not found with id"+ memberId) );
+
+        return memberMapper.toDTO(member);
+    }
+
 
     // Get Member by Username
     public MemberDTO getMemberByUsername(String username) {

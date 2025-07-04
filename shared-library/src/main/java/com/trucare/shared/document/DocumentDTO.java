@@ -13,11 +13,13 @@ public class DocumentDTO {
 
     private Long id;
 
-    private Long claimId;
-
     private String documentName;
 
-    private String documentUrl;
+    private String documentPath;
+
+    private String documentType; // e.g., BILL, PRESCRIPTION, etc.
+
+    private String uploadedByMemberId;
 
     private LocalDateTime uploadedAt;
 }

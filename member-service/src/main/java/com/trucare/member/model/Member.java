@@ -23,6 +23,9 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // Primary key is String as per the requirement
 
+    @Column(unique = true, nullable = false)
+    private String memberId; // auto gen in service
+
     @Column(unique = true)
     private String username;
 

@@ -4,7 +4,12 @@ package com.trucare.claims.controller;
 import com.trucare.claims.model.Claim;
 import com.trucare.shared.claim.ClaimDTO;
 import com.trucare.shared.claim.CreateClaimDTO;
+import com.trucare.shared.claim.UpdateClaimDTO;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,19 +20,38 @@ import com.trucare.claims.service.ClaimService;
 @RequestMapping("/api/claims")
 public class ClaimController {
 
+
     private final ClaimService claimService;
+    private  static final Logger logger = LoggerFactory.getLogger(ClaimController.class);
 
     @Autowired
-    public ClaimController(ClaimService claimService) {
+    public ClaimController(@Qualifier("claimSync") ClaimService claimService) {
         this.claimService = claimService;
     }
 
     // Endpoint to create or update claim
     @PostMapping
-    public ResponseEntity<ClaimDTO> createOrUpdateClaim(@RequestBody CreateClaimDTO createClaimDTO) {
+    public ResponseEntity<ClaimDTO> createClaim(@RequestBody CreateClaimDTO createClaimDTO) {
         ClaimDTO createdClaim = claimService.createClaim(createClaimDTO);
         return new ResponseEntity<>(createdClaim,HttpStatus.CREATED);
+    }
 
+    @GetMapping("/getClaim/{claimId}")
+    public ResponseEntity<ClaimDTO> getClaim(@PathVariable Long claimId){
+        ClaimDTO claimDTO = claimService.getClaimById(claimId);
+        return new ResponseEntity<>(claimDTO,HttpStatus.FOUND);
+    }
+
+    @GetMapping("/removeClaim/{claimId}")
+    public ResponseEntity<String> removeClaim(@PathVariable Long claimId){
+        String res = claimService.deleteClaim(claimId);
+        return new ResponseEntity<>(res,HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/updateClaim/claimId")
+    public ResponseEntity<ClaimDTO> updateClaim(@PathVariable String claimId, @RequestBody UpdateClaimDTO updateClaimDTO) {
+        ClaimDTO createdClaim = claimService.updateClaim(claimId, updateClaimDTO);
+        return new ResponseEntity<>(createdClaim,HttpStatus.OK);
     }
 }
 

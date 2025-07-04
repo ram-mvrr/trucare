@@ -18,10 +18,10 @@ public class Claim {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long claimId;  // Primary key for the claim
+    private Long id;  // Primary key for the claim
 
     @Column(unique = true)
-    private String claimNumber;  // Unique claim number
+    private String claimId;  // Unique claim number
 
     private String memberId;  // ID of the member
 

@@ -3,6 +3,7 @@ package com.trucare.member.controller;
 import com.trucare.member.service.MemberService;
 import com.trucare.shared.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,16 +26,21 @@ public class MemberController {
         return ResponseEntity.ok(createdMember);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<MemberDTO> getMemberById(@PathVariable Long id) {
-        MemberDTO member = memberService.getMemberById(id);
+//    @GetMapping("/{id}")
+//    public ResponseEntity<MemberDTO> getMemberById(@PathVariable String memberId) {
+//        MemberDTO member = memberService.getMemberById(memberId);
+//        return ResponseEntity.ok(member);
+//    }
+
+    @GetMapping("/{memberId}")
+    public ResponseEntity<MemberDTO> getMemberByUsername(@PathVariable String memeberId) {
+        MemberDTO member = memberService.getMemberByMemberId(memeberId);
         return ResponseEntity.ok(member);
     }
 
-    @GetMapping("/username/{username}")
-    public ResponseEntity<MemberDTO> getMemberByUsername(@PathVariable String username) {
-        MemberDTO member = memberService.getMemberByUsername(username);
-        return ResponseEntity.ok(member);
+    @GetMapping("/validate/{memberId}")
+    public Boolean validateMember(@PathVariable String memberId) {
+        return memberService.validateMember(memberId);
     }
 
     @GetMapping

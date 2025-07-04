@@ -1,0 +1,15 @@
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\care\CareDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\claim\ClaimDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\claim\CreateClaimDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\claim\UpdateClaimDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\client\MemberClient.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\client\ProviderClient.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\document\DocumentDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\events\ClaimCreatedEvent.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\events\ClaimDeletedEvent.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\events\ClaimUpdatedEvent.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\events\DocumentUploadedEvent.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\events\DocumentUploadEvent.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\kafka\kafkaProperties.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\member\MemberDTO.java
+E:\Java-projects\trucare\shared-library\src\main\java\com\trucare\shared\provider\ProviderDTO.java

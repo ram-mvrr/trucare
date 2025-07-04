@@ -16,6 +16,8 @@ public interface ProviderService {
     // Get Provider by ID
     ProviderDTO getProviderById(Long id);
 
+    //ProviderDTO getProviderByProviderId(String providerId);
+
     // Get all Providers
     List<ProviderDTO> getAllProviders();
 

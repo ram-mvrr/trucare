@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ProviderClient {
 
     @GetMapping("/validate/{providerId}")
-    Boolean validateProvider(@PathVariable("providerId") String providerid);
+    Boolean validateProvider(@PathVariable("providerId") String providerId);
 }

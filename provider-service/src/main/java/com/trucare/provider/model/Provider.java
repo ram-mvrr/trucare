@@ -17,8 +17,8 @@ public class Provider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // Primary key
 
-    @NotNull
-    private String providerId;
+    @Column(unique = true, nullable = false)
+    private String providerId; // autogen in service
 
     @NotNull
     private String name;  // Provider's name

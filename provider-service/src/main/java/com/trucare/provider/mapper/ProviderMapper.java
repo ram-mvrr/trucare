@@ -11,7 +11,7 @@ public interface ProviderMapper {
 
     ProviderMapper INSTANCE = Mappers.getMapper(ProviderMapper.class);
 
-    ProviderDTO providerToProviderDTO(Provider provider);
+    ProviderDTO toDTO(Provider provider);
 
-    Provider providerDTOToProvider(ProviderDTO providerDTO);
+    Provider toDO(ProviderDTO providerDTO);
 }

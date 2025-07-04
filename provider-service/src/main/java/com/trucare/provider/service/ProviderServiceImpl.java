@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,28 +23,31 @@ public class ProviderServiceImpl implements ProviderService {
 
     @Override
     public ProviderDTO createProvider(ProviderDTO providerDTO) {
-        Provider provider = providerMapper.providerDTOToProvider(providerDTO);
+        String providerId = "PRV"+ UUID.randomUUID().toString().substring(0,6).toUpperCase();
+        Provider provider = providerMapper.toDO(providerDTO);
+        provider.setProviderId(providerId);
         provider = providerRepository.save(provider);
-        return providerMapper.providerToProviderDTO(provider);
+        return providerMapper.toDTO(provider);
     }
 
     @Override
     public boolean validateProvider(String providerId) {
         System.out.println("Validating provider: " + providerId);  // Simulating API call
-        return providerId!=null && !providerId.isEmpty();
+        Optional<Provider> provider = Optional.ofNullable(providerRepository.findByProviderId(providerId));
+        return providerId!=null && provider.isPresent();
     }
 
     @Override
     public ProviderDTO getProviderById(Long id) {
         Provider provider = providerRepository.findById(id).orElseThrow(() -> new RuntimeException("Provider not found"));
-        return providerMapper.providerToProviderDTO(provider);
+        return providerMapper.toDTO(provider);
     }
 
     @Override
     public List<ProviderDTO> getAllProviders() {
         List<Provider> providers = providerRepository.findAll();
         return providers.stream()
-                .map(providerMapper::providerToProviderDTO)
+                .map(providerMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
@@ -55,7 +60,7 @@ public class ProviderServiceImpl implements ProviderService {
         provider.setAddress(providerDTO.getAddress());
         provider.setStatus(providerDTO.getStatus());
         provider = providerRepository.save(provider);
-        return providerMapper.providerToProviderDTO(provider);
+        return providerMapper.toDTO(provider);
     }
 
     @Override

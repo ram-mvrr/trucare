@@ -13,10 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class UpdateClaimDTO {
-    private Long claimId;
-    private Long claimNumber;
-    private Long memberId; // Can be expanded to MemberDTO if needed
-    private Long providerId; // Can be expanded to ProviderDTO if needed
+    private Long id;
+    private String claimId;
+    private String memberId; // Can be expanded to MemberDTO if needed
+    private String providerId; // Can be expanded to ProviderDTO if needed
     private BigDecimal claimAmount;
     private String claimStatuses; // Relationship to ClaimStatusDTO
     private LocalDateTime createdAt;  // Claim creation date
