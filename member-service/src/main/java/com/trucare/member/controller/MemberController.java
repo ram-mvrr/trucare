@@ -3,7 +3,6 @@ package com.trucare.member.controller;
 import com.trucare.member.service.MemberService;
 import com.trucare.shared.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,8 +32,8 @@ public class MemberController {
 //    }
 
     @GetMapping("/{memberId}")
-    public ResponseEntity<MemberDTO> getMemberByUsername(@PathVariable String memeberId) {
-        MemberDTO member = memberService.getMemberByMemberId(memeberId);
+    public ResponseEntity<MemberDTO> getMemberByUsername(@PathVariable String memberId) {
+        MemberDTO member = memberService.getMemberByMemberId(memberId);
         return ResponseEntity.ok(member);
     }
 

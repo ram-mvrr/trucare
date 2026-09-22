@@ -2,6 +2,7 @@ com\trucare\shared\claim\CreateClaimDTO.class
 com\trucare\shared\events\DocumentUploadedEvent.class
 com\trucare\shared\document\DocumentDTO.class
 com\trucare\shared\member\MemberDTO.class
+com\trucare\shared\client\DocumentClient.class
 com\trucare\shared\events\ClaimCreatedEvent.class
 com\trucare\shared\provider\ProviderDTO.class
 com\trucare\shared\claim\ClaimDTO.class

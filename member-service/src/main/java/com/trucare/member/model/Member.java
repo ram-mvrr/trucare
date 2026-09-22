@@ -47,4 +47,6 @@ public class Member {
     // List of document IDs that belong to the member
     private List<Long> documentIds;
 
+    public <E> Member(long l, String ramanar, String ramana, String reddy, LocalDate of, String male, String number, String bangalore, List<E> es) {
+    }
 }
